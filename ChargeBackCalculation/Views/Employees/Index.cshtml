@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ChargeBackCalculation.Models.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+    @Html.ActionLink("ChargeBackDetails", "Index", "ComplaintRegisters")
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BankAccountNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BankBranchName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BankAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AvailableBalance)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BankAccountNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BankBranchName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BankAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AvailableBalance)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

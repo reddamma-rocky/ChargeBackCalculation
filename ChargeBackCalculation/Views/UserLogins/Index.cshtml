@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Home Page</h2>
+
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>
+                Choose your role:
+            </td>
+            <td></td>
+            <td></td>
+            <td>
+                @Html.DropDownList("UserRole", new List<SelectListItem>
+               { new SelectListItem { Text="Admin", Value="Admin"},
+                 new SelectListItem { Text="Employee", Value="Employee"},
+                 new SelectListItem { Text="Customer", Value="Customer"},
+                  }, "Select Role")
+            </td>
+        </tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                <input type="submit" id="Submit" value="Select" />
+            </td>
+        </tr>
+    </table>
+}
+
+
